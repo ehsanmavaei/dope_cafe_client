@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dope_cafe_client/static/css/main.9eff297d.css",
-    "main.js": "/dope_cafe_client/static/js/main.e1b8fbdd.js",
+    "main.js": "/dope_cafe_client/static/js/main.745c090d.js",
     "static/js/498.a52224cb.chunk.js": "/dope_cafe_client/static/js/498.a52224cb.chunk.js",
     "static/js/703.54c48d04.chunk.js": "/dope_cafe_client/static/js/703.54c48d04.chunk.js",
     "static/js/513.473f4c70.chunk.js": "/dope_cafe_client/static/js/513.473f4c70.chunk.js",
@@ -21,13 +21,13 @@
     "static/media/logo.png": "/dope_cafe_client/static/media/logo.08512e8274187623fb16.png",
     "index.html": "/dope_cafe_client/index.html",
     "main.9eff297d.css.map": "/dope_cafe_client/static/css/main.9eff297d.css.map",
-    "main.e1b8fbdd.js.map": "/dope_cafe_client/static/js/main.e1b8fbdd.js.map",
+    "main.745c090d.js.map": "/dope_cafe_client/static/js/main.745c090d.js.map",
     "498.a52224cb.chunk.js.map": "/dope_cafe_client/static/js/498.a52224cb.chunk.js.map",
     "703.54c48d04.chunk.js.map": "/dope_cafe_client/static/js/703.54c48d04.chunk.js.map",
     "513.473f4c70.chunk.js.map": "/dope_cafe_client/static/js/513.473f4c70.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9eff297d.css",
-    "static/js/main.e1b8fbdd.js"
+    "static/js/main.745c090d.js"
   ]
 }
