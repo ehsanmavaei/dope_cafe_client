@@ -1,33 +1,33 @@
 {
   "files": {
     "main.css": "/dope_cafe_client/static/css/main.9eff297d.css",
-    "main.js": "/dope_cafe_client/static/js/main.7ba5e859.js",
+    "main.js": "/dope_cafe_client/static/js/main.b76977ed.js",
     "static/js/498.8ce91b10.chunk.js": "/dope_cafe_client/static/js/498.8ce91b10.chunk.js",
     "static/js/703.91238948.chunk.js": "/dope_cafe_client/static/js/703.91238948.chunk.js",
     "static/js/513.27520e5b.chunk.js": "/dope_cafe_client/static/js/513.27520e5b.chunk.js",
-    "static/media/loginBg.jpg": "/dope_cafe_client/static/media/loginBg.3d1e40827cbf87d5b1b4.jpg",
-    "static/media/avatar.png": "/dope_cafe_client/static/media/avatar.c8950e9864bba405ea41.png",
+    "static/media/loginBg.jpg": "/dope_cafe_client/static/media/loginBg.d2b55e02b1a323ed0464.jpg",
     "static/media/Digikalafont.ttf": "/dope_cafe_client/static/media/Digikalafont.7bd94866eafc41772007.ttf",
     "static/media/Iranyekanthin.ttf": "/dope_cafe_client/static/media/Iranyekanthin.fa4ee44fb1b00e264acf.ttf",
     "static/media/Iranyekanlight.ttf": "/dope_cafe_client/static/media/Iranyekanlight.10d95cef618f98f71b6a.ttf",
-    "static/media/heroBg.png": "/dope_cafe_client/static/media/heroBg.c43c4862422e70d88698.png",
     "static/media/Iranyekan.ttf": "/dope_cafe_client/static/media/Iranyekan.3fb368ca1bd556d23f46.ttf",
     "static/media/Iranyekanextrablack.ttf": "/dope_cafe_client/static/media/Iranyekanextrablack.1b55f7280f578bb5dc1b.ttf",
     "static/media/Iranyekanextrabold.ttf": "/dope_cafe_client/static/media/Iranyekanextrabold.7052bcc817d40d27e713.ttf",
     "static/media/Iranyekanmedium.ttf": "/dope_cafe_client/static/media/Iranyekanmedium.87d172af5a6cb258f13e.ttf",
     "static/media/Iranyekanbold.ttf": "/dope_cafe_client/static/media/Iranyekanbold.bf06c5785933b760da70.ttf",
     "static/media/Iranyekanblack.ttf": "/dope_cafe_client/static/media/Iranyekanblack.ea936a4866227a30e62e.ttf",
-    "static/media/no-image.png": "/dope_cafe_client/static/media/no-image.8505b0d17a0b3b071f9c.png",
+    "static/media/avatar.png": "/dope_cafe_client/static/media/avatar.d1e1212ad6a83b585afc.png",
+    "static/media/no-image.png": "/dope_cafe_client/static/media/no-image.0d1505726f3cad76ca21.png",
     "static/media/logo.png": "/dope_cafe_client/static/media/logo.08512e8274187623fb16.png",
+    "static/media/heroBg.png": "/dope_cafe_client/static/media/heroBg.b7b77851b703c8001853.png",
     "index.html": "/dope_cafe_client/index.html",
     "main.9eff297d.css.map": "/dope_cafe_client/static/css/main.9eff297d.css.map",
-    "main.7ba5e859.js.map": "/dope_cafe_client/static/js/main.7ba5e859.js.map",
+    "main.b76977ed.js.map": "/dope_cafe_client/static/js/main.b76977ed.js.map",
     "498.8ce91b10.chunk.js.map": "/dope_cafe_client/static/js/498.8ce91b10.chunk.js.map",
     "703.91238948.chunk.js.map": "/dope_cafe_client/static/js/703.91238948.chunk.js.map",
     "513.27520e5b.chunk.js.map": "/dope_cafe_client/static/js/513.27520e5b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9eff297d.css",
-    "static/js/main.7ba5e859.js"
+    "static/js/main.b76977ed.js"
   ]
 }
