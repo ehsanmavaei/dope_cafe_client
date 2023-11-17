@@ -15,8 +15,12 @@ const Home = ({ noimage,reference }) => {
   return (
     <motion.div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 ">
       <div className="flex flex-col items-start justify-start gap-6">
-        <div className="px-4 py-1 flex items-center justify-center gap-2 bg-orange-100 rounded-full cursor-pointer">
+
+      <a href="https://www.instagram.com/in_the_dope">
+      <div className="px-4 py-1 flex items-center justify-center gap-2 bg-orange-100 rounded-full cursor-pointer">
           <p className="text-lg font-semibold text-orange-500">اینستاگرام دپ</p>
+        
+
           <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary shadow-md">
           <FaInstagram size={30} color="orange" />
 
@@ -25,6 +29,8 @@ const Home = ({ noimage,reference }) => {
             /> */}
           </div>
         </div>
+      </a>
+      
 
         <p className="text-[40px] text-headingColor md:text-[72px]   font-primary ">
          بهترین قهو ها در{" "}

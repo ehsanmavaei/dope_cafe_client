@@ -56,7 +56,7 @@ const Header = ({ reference }) => {
             className={({ isActive }) =>
               isActive ? isActiveStyles : isNotActiveStyles
             }
-            to={"/menu"}
+            // to={"/menu"}
           >
             منو
           </NavLink>
