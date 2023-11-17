@@ -1,0 +1,58 @@
+/* @import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic); */
+@font-face {
+  font-family: Blackout;
+  src: url("./assets/fonts/Digikalafont.ttf") format("opentype");
+}
+@font-face {
+  font-family: IranYekan;
+  src: url("./assets/fonts/Iranyekan.ttf") format("opentype");
+}
+@font-face {
+  font-family: IranYekanBlack;
+  src: url("./assets/fonts/Iranyekanblack.ttf") format("opentype");
+}
+@font-face {
+  font-family: IranYekanBold;
+  src: url("./assets/fonts/Iranyekanbold.ttf") format("opentype");
+}
+@font-face {
+  font-family: IranYekanextraBlack;
+  src: url("./assets/fonts/Iranyekanextrablack.ttf") format("opentype");
+}
+@font-face {
+  font-family: IranYekanExtraBold;
+  src: url("./assets/fonts/Iranyekanextrabold.ttf") format("opentype");
+}
+@font-face {
+  font-family: IranYekanLight;
+  src: url("./assets/fonts/Iranyekanlight.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: IranYekanMedium;
+  src: url("./assets/fonts/Iranyekanmedium.ttf") format("opentype");
+}
+@font-face {
+  font-family: IranYekanThin;
+  src: url("./assets/fonts/Iranyekanthin.ttf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost", sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.MuiPaper-root {
+  width: 100%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
