@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { fadeInOut } from "./animations";
 import { getAllCartItems, validateUserJWTToken } from "./api";
 import { Alert, MainLoader, CheckOutSuccess, UsersOrder } from "./components";
 
-import { Dashboard, Login, Main } from "./containers";
 import { setCartItems } from "./context/actions/cartAction";
 import { setUserDetails } from "./context/actions/userActions";
+import { Login, Main } from "./containers";
+// import { Dashboard} from "./containers";
+const Dashboard = lazy(() => import("./containers/Dashboard"));
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +37,14 @@ const App = () => {
       <Routes>
         <Route path="/*" element={<Main />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route
+          path="/dashboard/*"
+          element={
+            <Suspense fallback={MainLoader}>
+              <Dashboard />
+            </Suspense>
+          }
+        />
         <Route path="/checkout-success" element={<CheckOutSuccess />} />
         <Route path="/user-orders" element={<UsersOrder />} />
       </Routes>

@@ -23,7 +23,7 @@ const FilterSection = ({ noimage,reference }) => {
     rootNode: (emblaRoot) => emblaRoot.parentElement,
   };
 
-  const [category, setCategory] = useState("coffee");
+  const [category, setCategory] = useState("بستنی");
   const products = useSelector((state) => state.products);
   const emptycart = products
     ? products.filter((data) => data.category === category)
@@ -47,17 +47,7 @@ const FilterSection = ({ noimage,reference }) => {
         </div>
       </div>
 
-      {/* <div className="w-full overflow-x-scroll pt-6 flex items-center justify-center gap-6 py-8">
-        {statuses &&
-          statuses.map((data, i) => (
-            <FilterCard
-              data={data}
-              category={category}
-              setCategory={setCategory}
-              index={i}
-            />
-          ))}
-      </div> */}
+ 
       <div className="embla   h-52 pt-4   w-full" ref={emblaRef}>
         <div className="embla__container">
           {productsList &&
