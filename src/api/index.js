@@ -5,7 +5,7 @@ const parsed= tokenInTheStorage? JSON.parse(tokenInTheStorage).token :" "
 console.log(parsed)
 axios.defaults.headers.common['authorization'] = `Bearer ${parsed}`;
 
-export const baseURL = "https://nodes.iran.liara.run/4100";
+export const baseURL = "https://nodes.iran.liara.run";
 
 export const validateUserJWTToken = async (token) => {
   try {
