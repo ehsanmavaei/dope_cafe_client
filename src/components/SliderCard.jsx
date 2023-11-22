@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, {  } from "react";
+import { useDispatch, } from "react-redux";
 import { buttonClcik, fadeIn } from "../animations";
-import { addNewItemToCart, getAllCartItems } from "../api";
-import { HiCurrencyRupee, IoBasket } from "../assets/icons";
+// import { addNewItemToCart, getAllCartItems } from "../api";
+import { IoBasket } from "../assets/icons";
 import { alertNULL, alertSuccess } from "../context/actions/alertActions";
-import { addToCart, setCartItems } from "../context/actions/cartAction";
-import noimage from "../assets/img/no-image.png";
+import { setCartItems } from "../context/actions/cartAction";
+// import noimage from "../assets/img/no-image.png";
 import { TbMoodSad } from "react-icons/tb";
-import { ToastContainer, toast } from "react-toastify";
-import '../assets/css/utilCss.css'
+
+import "../assets/css/utilCss.css";
 
 const SliderCard = ({
   data,
@@ -19,44 +19,25 @@ const SliderCard = ({
   number,
   noimage,
 }) => {
-  console.log(number);
-  const cart = useSelector((state) => state.cart);
 
-  const user = useSelector((state) => state.user);
-  // const cart = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
 
   const sendToCart = (data) => {
-    // toast.success("به سبد اضافه شد")
+
     dispatch(alertSuccess("به سبد اضافه شد"));
 
-    // addNewItemToCart(user?.user_id, data).then((res) => {
-    //   getAllCartItems(user?.user_id).then((items) => {
-    //     dispatch(setCartItems(items));
-    //   });
+  
     setInterval(() => {
       dispatch(alertNULL());
     }, 2500);
-    // });
-    // setCartdata(oldArray => [...oldArray, data]);
+
 
     dispatch(setCartItems(data));
   };
 
   return (
     <>
-      <ToastContainer
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={true}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       {number > 0 ? (
         data.product_name !== "dd" ? (
           <motion.div
@@ -73,7 +54,8 @@ const SliderCard = ({
                 {data.product_name}
               </p>
               <p className="text-lg font-semibold text-red-500 flex  items-end justify-end gap-1">
-              {parseFloat(data.price)} ت 
+                {parseFloat(data.price)}
+                <span>تومان</span>{" "}
               </p>
 
               <motion.div
@@ -81,8 +63,7 @@ const SliderCard = ({
                 onClick={(e) => sendToCart(data)}
                 className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center absolute top-7 left-4 cursor-pointer"
               >
-                
-                <IoBasket className="text-2xl text-primary"  />
+                <IoBasket className="text-2xl text-primary" />
               </motion.div>
             </div>
           </motion.div>
@@ -96,8 +77,8 @@ const SliderCard = ({
               onClick={() =>
                 reference.current.scrollIntoView({
                   behavior: "smooth",
-                  block: "center",
-                  inline: "nearest",
+                  block: "start",
+                inline: "nearest",
                 })
               }
             >
@@ -109,7 +90,7 @@ const SliderCard = ({
         )
       ) : (
         <>
-          <div className=" flex justify-center items-center text-xl">
+          <div className=" flex justify-center items-center text-xl   mb-52  ">
             از اینا نداریم ببخشید
             <TbMoodSad size={22} />
           </div>

@@ -14,7 +14,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { login, signup, validateUserJWTToken } from "../api";
 import { setUserDetails } from "../context/actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
-import { alertInfo, alertWarning } from "../context/actions/alertActions";
+// import { alertInfo, alertWarning } from "../context/actions/alertActions";
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState("");

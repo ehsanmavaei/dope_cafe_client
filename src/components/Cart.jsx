@@ -3,17 +3,12 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { buttonClcik, slideIn, staggerFadeInOut } from "../animations";
-import { baseURL, getAllCartItems, increaseItemQuantity } from "../api";
-import {
-  BiChevronsRight,
-  FcClearFilters,
-  HiCurrencyRupee,
-} from "../assets/icons";
-import { FaMoneyCheckAlt } from "react-icons/fa";
+import { baseURL } from "../api";
+import { BiChevronsRight, FcClearFilters } from "../assets/icons";
+// import { FaMoneyCheckAlt } from "react-icons/fa";
 
-import { alertNULL, alertSuccess } from "../context/actions/alertActions";
+// import { alertNULL, alertSuccess } from "../context/actions/alertActions";
 import {
-  setCartItems,
   addToCart,
   decrementCartQuantity,
 } from "../context/actions/cartAction";
@@ -168,10 +163,10 @@ export const CartItemCard = ({ index, data, noimage }) => {
           </span>
         </p>
         <p className="text-sm flex items-center justify-center gap-1 font-semibold text-red-400 ml-auto">
-        {/* <FaMoneyCheckAlt /> */}
+          {/* <FaMoneyCheckAlt /> */}
 
           {/* <HiCurrencyRupee className="text-green-400" />  */}
-         <span className="  pr-3"> {itemTotal}</span>
+          <span className="  pr-3"> {itemTotal}</span>
         </p>
       </div>
 

@@ -1,20 +1,18 @@
-import React, { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Avatar, Logo } from "../assets";
+import React, { useState, useRef } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Logo } from "../assets";
 import { isActiveStyles, isNotActiveStyles } from "../utils/styles";
 import { motion } from "framer-motion";
-import { buttonClcik, slideTop } from "../animations";
-import { MdLogout, MdShoppingCart } from "../assets/icons";
+import { buttonClcik } from "../animations";
+import { MdShoppingCart } from "../assets/icons";
 import { useDispatch, useSelector } from "react-redux";
-
 
 import { setUserNull } from "../context/actions/userActions";
 import { setCartOn } from "../context/actions/displayCartAction";
 
-const Header = ({ reference }) => {
+const Header = ({ reference, scrollToTheTop }) => {
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
-
   const [isMenu, setIsMenu] = useState(false);
 
   const navigate = useNavigate();
@@ -24,19 +22,29 @@ const Header = ({ reference }) => {
     localStorage.removeItem("user");
     dispatch(setUserNull());
     navigate("/login", { replace: true });
-
   };
 
   return (
-    <header className="fixed backdrop-blur-md z-50 inset-x-0 top-0 flex items-center justify-between px-12 md:px-20 py-6">
-      <NavLink to={"/"} className="flex items-center justify-center gap-4">
-        <p className="font-semibold text-xl">کافه</p>
+    <header className="fixed backdrop-blur-md z-50 inset-x-0 top-0 flex items-center justify-between px-12 md:px-20 py-4 ">
+      <NavLink
+        ref={scrollToTheTop}
+        to={"/"}
+        className="flex items-center justify-center gap-4"
+        onClick={() =>
+          scrollToTheTop.current.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest",
+          })
+        }
+      >
+        <p className="font-medium  text-gray-700 text-xl">کافه</p>
 
         <img src={Logo} className="w-16" alt="" />
       </NavLink>
 
-      <nav className="flex items-center justify-center gap-8">
-        <ul className=" md:flex items-center justify-center gap-16">
+      <nav className="flex items-center justify-center  gap-8">
+        <ul className=" md:flex items-center justify-center font-meduim gap-16">
           {/* <NavLink
             className={({ isActive }) =>
               isActive ? isActiveStyles : isNotActiveStyles
@@ -49,14 +57,14 @@ const Header = ({ reference }) => {
             onClick={() =>
               reference.current.scrollIntoView({
                 behavior: "smooth",
-                block: "center",
+                block: "start",
                 inline: "nearest",
               })
             }
             className={({ isActive }) =>
               isActive ? isActiveStyles : isNotActiveStyles
             }
-            // to={"/menu"}
+            to={"/menu"}
           >
             منو
           </NavLink>

@@ -12,18 +12,18 @@ import Autoplay from "embla-carousel-autoplay";
 
 import "./styles.css";
 
-const FilterSection = ({ noimage,reference }) => {
+const FilterSection = ({ noimage, reference }) => {
   const scollToRef = useRef();
 
   const [cartdata, setCartdata] = useState([]);
   const productsList = useSelector((state) => state.productsList);
   const autoplayOptions = {
-    delay: 3000,
+    delay: 2000,
     stopOnInteraction: false,
     rootNode: (emblaRoot) => emblaRoot.parentElement,
   };
 
-  const [category, setCategory] = useState("بستنی");
+  const [category, setCategory] = useState("پیشنهاد ما");
   const products = useSelector((state) => state.products);
   const emptycart = products
     ? products.filter((data) => data.category === category)
@@ -31,25 +31,22 @@ const FilterSection = ({ noimage,reference }) => {
 
   const number = emptycart.length;
 
-  const [emblaRef] = useEmblaCarousel({ dragFree: true,direction:"rtl"}, [
+  const [emblaRef] = useEmblaCarousel({ dragFree: true, direction: "rtl" }, [
     Autoplay(autoplayOptions),
-    
   ]);
   return (
-    <motion.div className="w-full flex items-start justify-start flex-col ">
-      <div
-        className=" w-full flex items-center justify-between "
-        ref={reference}
-      >
+    <motion.div className="w-full flex items-start justify-start flex-col  pt-14 " ref={reference} >
+      <div className=" w-full flex items-center justify-between ">
         <div className="flex flex-col items-start justify-start gap-1">
-          <p className="text-2xl text-headingColor font-bold">از منوی زیر انتخاب کنید</p>
-          <div className="w-40 h-1 rounded-md bg-orange-500"></div>
+          <p className="text-2xl text-headingColor font-medium" >
+            از منوی زیر انتخاب کنید
+          </p>
+          <div className="w-40 h-1 rounded-md bg-orange-500" ></div>
         </div>
       </div>
 
- 
       <div className="embla   h-52 pt-4   w-full" ref={emblaRef}>
-        <div className="embla__container">
+        <div className="embla__container" >
           {productsList &&
             productsList.map((data, i) => (
               <FilterCard
@@ -62,7 +59,7 @@ const FilterSection = ({ noimage,reference }) => {
             ))}
         </div>
       </div>
-      <div className=" w-full flex items-center  justify-center flex-wrap gap-4  mb-16  ">
+      <div className=" w-full flex items-center  justify-center flex-wrap gap-4 mb-72  ">
         {products &&
           products
             .filter((data) => data.category === category)

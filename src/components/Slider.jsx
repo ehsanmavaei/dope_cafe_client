@@ -15,7 +15,7 @@ const Slider = ({noimage}) => {
   }, [products]);
 
   return (
-    <div className="w-full pt-24">
+    <div className="w-full  pt-3">
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
