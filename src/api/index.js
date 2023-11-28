@@ -84,15 +84,7 @@ export const uploadIMG = async (file, func) => {
     },
   };
 
-  // const config = {
-  //   onUploadProgress: (e) => {
-  //     const { loaded, total } = e;
-  //     console.log(loaded,total)
 
-  //     func((loaded / total) * 100);
-  //   },
-
-  // };
   const res = await axios.post(`
   ${baseURL}/api/files/upload`,
     formData,
@@ -100,6 +92,38 @@ export const uploadIMG = async (file, func) => {
   );
   return res;
 };
+export const updateIMG = async (file,id,func) => {
+  // ev.preventDefault();
+  const formData = new FormData();
+  formData.append("message", "");
+  formData.append("image", file[0]);
+  formData.append("id",id)
+  const onUploadProgress = (event) => {
+    const percentage = Math.round((100 * event.loaded) / event.total);
+    console.log('the data for the percentages is ',percentage);
+  };
+
+  const config = {
+    onUploadProgress: (e) => {
+      const { loaded, total } = e;
+      console.log(loaded, total);
+      func((loaded / total) * 100);
+
+    },
+    header: {
+      "Content-Type": "multipart/form-data",
+    },
+  };
+
+
+  const res = await axios.post(`
+  ${baseURL}/api/files/update`,
+    formData,
+    config
+  );
+  return res;
+};
+
 
 // get all the products
 export const getAllProducts = async () => {

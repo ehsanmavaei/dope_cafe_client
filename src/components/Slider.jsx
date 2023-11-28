@@ -10,7 +10,7 @@ const Slider = ({noimage}) => {
   const products = useSelector((state) => state.products);
   const [fruits, setFruits] = useState(null);
   useEffect(() => {
-    setFruits(products?.filter((data) => data.category === "شیک "));
+    setFruits(products?.filter((data) => data.category === "قهوه تک خاستگاه"));
     // console.log(fruits);
   }, [products]);
 

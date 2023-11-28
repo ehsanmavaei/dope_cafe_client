@@ -59,10 +59,8 @@ const DBNewItem = () => {
     uploadIMG(imageFile, setProgress)
       .then((res) => {
         setisLoading(false);
-        console.log(res.data);
         setImage(res.data.result.secure_url);
         setImagePublicId(res.data.result.public_id);
-        console.log(res);
         toast.success(res.data.message);
 
         setImageDownloadURL(res.data.result.secure_url);

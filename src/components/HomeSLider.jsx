@@ -8,7 +8,7 @@ const HomeSLider = ({noimage}) => {
       <div className=" w-full flex items-center justify-between ">
         <div className="flex flex-col items-start justify-start gap-1">
           <p className="text-2xl text-headingColor  font-medium">
-          قهوه  های طعم دار ما
+          قهوه های  تک خاستگاه
           </p>
           <div className="w-40 h-1 rounded-md bg-orange-500"></div>
         </div>

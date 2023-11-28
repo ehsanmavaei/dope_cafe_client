@@ -35,18 +35,21 @@ const FilterSection = ({ noimage, reference }) => {
     Autoplay(autoplayOptions),
   ]);
   return (
-    <motion.div className="w-full flex items-start justify-start flex-col  pt-14 " ref={reference} >
+    <motion.div
+      className="w-full flex items-start justify-start flex-col  pt-14 "
+      ref={reference}
+    >
       <div className=" w-full flex items-center justify-between ">
         <div className="flex flex-col items-start justify-start gap-1">
-          <p className="text-2xl text-headingColor font-medium" >
+          <p className="text-2xl text-headingColor font-medium">
             از منوی زیر انتخاب کنید
           </p>
-          <div className="w-40 h-1 rounded-md bg-orange-500" ></div>
+          <div className="w-40 h-1 rounded-md bg-orange-500"></div>
         </div>
       </div>
 
       <div className="embla   h-52 pt-4   w-full" ref={emblaRef}>
-        <div className="embla__container" >
+        <div className="embla__container">
           {productsList &&
             productsList.map((data, i) => (
               <FilterCard
@@ -88,12 +91,12 @@ export const FilterCard = ({ data, index, category, setCategory }) => {
       key={index}
       {...staggerFadeInOut(index)}
       onClick={() => setCategory(data.category_name)}
-      className={`group w-28 min-w-[128px] cursor-pointer rounded-md  embla__slide "  gap-2 px-8 py-6 ${
+      className={`group w-28 min-w-[128px] cursor-pointer rounded-md    embla__slide "  gap-2 px-8 py-6 ${
         category === data.category_name ? "bg-red-500 " : "bg-primary"
       } hover:bg-red-500 shadow-md flex flex-col items-center justify-center gap-4`}
     >
       <div
-        className={`w-10 h-10 rounded-full shadow-md flex items-center justify-center group-hover:bg-primary ${
+        className={`w-10 h-10  rounded-full shadow-md flex items-center justify-center group-hover:bg-primary ${
           category === data.category_name ? "bg-primary" : "bg-red-500"
         }`}
       >
@@ -104,7 +107,7 @@ export const FilterCard = ({ data, index, category, setCategory }) => {
         />
       </div>
       <p
-        className={`text-xl font-semibold ${
+        className={` text-base font-medium  ${
           category === data.category_name ? "text-primary" : "text-textColor"
         } group-hover:text-primary`}
       >

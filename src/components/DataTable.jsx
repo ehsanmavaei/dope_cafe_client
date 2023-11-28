@@ -8,23 +8,23 @@ import TablePagination from "material-table";
 
 const DataTable = ({ columns, data, title, actions }) => {
   const defaultMaterialTheme = createTheme({
-    direction:"rtl",
-  
+    direction: "rtl",
   });
   const dispatch = useDispatch();
 
   return (
     <ThemeProvider theme={defaultMaterialTheme}>
       <MaterialTable
-      
         options={{
-          headerStyle:{color:"gray",fontFamily:"Blackout",fontSize:"2rem",paddingRight:"20px"},
-          rowStyle:{padding:"20px"},
-          
-          pagination:{color:"red"}
-          
+          headerStyle: {
+            color: "gray",
+            fontFamily: "Blackout",
+            fontSize: "2rem",
+            paddingRight: "20px",
+          },
+          rowStyle: { padding: "20px" },
 
-      
+          pagination: { color: "red" },
         }}
         editable={{
           // onRowAdd: (newData) =>
@@ -133,7 +133,6 @@ const DataTable = ({ columns, data, title, actions }) => {
             searchPlaceholder: "جستجو",
           },
         }}
-     
         columns={columns}
         data={data}
         title={title}
