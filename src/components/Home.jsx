@@ -107,7 +107,7 @@ const Home = ({ noimage, reference }) => {
                 >
                   <img
                     src={data.image ? data.image : noimage}
-                    className="w-25 h-25 md:w-32 md:h-32 md:-mt-16 object-contain "
+                    className="w-25 h-25 md:w-32 md:h-32 md:-mt-16 object-contain rounded-2xl"
                     alt=""
                   />
                   <p className="text-sm lg:text-xl font-semibold text-textColor">
