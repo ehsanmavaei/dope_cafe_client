@@ -3,27 +3,29 @@ import React, { useState, useRef } from "react";
 import { IoFastFood } from "../assets/icons";
 import { useSelector } from "react-redux";
 import { staggerFadeInOut } from "../animations";
-import { statuses } from "../utils/styles";
 import SliderCard from "./SliderCard";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-// import { useDispatch, useSelector } from "react-redux";
 
 import "./styles.css";
 
-const FilterSection = ({ noimage, reference }) => {
+const FilterSection = ({ noimage, reference, }) => {
+
+
   const scollToRef = useRef();
 
   const [cartdata, setCartdata] = useState([]);
   const productsList = useSelector((state) => state.productsList);
+
   const autoplayOptions = {
     delay: 2000,
     stopOnInteraction: false,
     rootNode: (emblaRoot) => emblaRoot.parentElement,
   };
+  const [category, setCategory] = useState('کیک');
 
-  const [category, setCategory] = useState("پیشنهاد ما");
+
   const products = useSelector((state) => state.products);
   const emptycart = products
     ? products.filter((data) => data.category === category)
@@ -34,6 +36,7 @@ const FilterSection = ({ noimage, reference }) => {
   const [emblaRef] = useEmblaCarousel({ dragFree: true, direction: "rtl" }, [
     Autoplay(autoplayOptions),
   ]);
+
   return (
     <motion.div
       className="w-full flex items-start justify-start flex-col  pt-14 "

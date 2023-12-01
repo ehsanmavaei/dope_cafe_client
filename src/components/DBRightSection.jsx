@@ -7,7 +7,8 @@ import {
   DBNewItem,
   DBOrders,
   DBUsers,
-  DBProducts
+  DBProducts,
+  DBConfig
 } from "../components";
 
 const DBRightSection = () => {
@@ -21,6 +22,7 @@ const DBRightSection = () => {
           <Route path="/items" element={<DBItems />} />
           <Route path="/products" element={<DBProducts />} />
           <Route path="/newItem" element={<DBNewItem />} />
+          <Route path="/config" element={<DBConfig />} />
           {/* <Route path="/users" element={<DBUsers />} /> */}
         </Routes>
       </div>

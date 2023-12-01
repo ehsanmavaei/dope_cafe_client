@@ -116,6 +116,7 @@ const DBNewItem = () => {
         setItemName("");
         setPrice("");
         setCategory(null);
+        setImagePublicId('')
       });
       toast.success("در سرور ذخیره شد")
       getAllProducts().then((res) => {

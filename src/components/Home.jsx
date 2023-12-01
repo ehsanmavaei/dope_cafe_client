@@ -1,16 +1,30 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React ,{useEffect}from "react";
 import { buttonClcik, staggerFadeInOut } from "../animations";
-import { Delivery, HeroBg } from "../assets";
-import { randomData } from "../utils/styles";
+import {HeroBg } from "../assets";
 import { useSelector, useDispatch } from "react-redux";
 import { FaInstagram } from "react-icons/fa";
 import { setCartItems } from "../context/actions/cartAction";
 import { alertNULL, alertSuccess } from "../context/actions/alertActions";
 import { IoBasket } from "../assets/icons";
+import {  getConfig } from "../api";
+import { setConfig } from "../context/actions/configAction";
+
 
 const Home = ({ noimage, reference }) => {
+
+  useEffect(() => {
+    getConfig().then((data) => {
+      dispatch(setConfig(data));
+    });
+  
+  
+
+
+ 
+  }, []);
   const products = useSelector((state) => state.products);
+  const config = useSelector((state) => state.config);
   const dispatch = useDispatch();
 
   const sendToCart = (data) => {
@@ -22,11 +36,12 @@ const Home = ({ noimage, reference }) => {
 
     dispatch(setCartItems(data));
   };
-
+// let instagram=config && config[0].instagram
   return (
     <motion.div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4  mb-20">
       <div className="flex flex-col items-start justify-start gap-6">
-        <a href="https://www.instagram.com/in_the_dope">
+        {/* <a href={instagram}> */}
+        <a href={`${config && config[0].instagram}`}>
           <div className="px-4 py-1 flex items-center justify-center gap-2 bg-orange-100 rounded-full cursor-pointer">
             <p className="text-lg font-semibold text-orange-500">
               اینستاگرام دپ
@@ -46,13 +61,16 @@ const Home = ({ noimage, reference }) => {
           بهترین قهوه ها در
         </p>
         <p className="text-orange-600  text-[40px] md:text-[72px] font-extrabold">
-          کافه دُپ
+          {config && config[0].name}{" "}
         </p>
 
         <p className="text-textColor  text-3xl font-primary">
-          ما ستارگان یک نمایش هستیم آیندتو بساز ، کافئینش با ما <br />
+          {config &&  config[0].slogan}
+          <br />
         </p>
-        <p className=" text-gray-600 font-light">ساعت کار کافه 09:00-24:00</p>
+        <p className=" text-gray-600 font-bold ">
+        ساعت کار کافه از {config && config[0].start_working} تا {config && config[0].finish_working }
+        </p>
         <motion.button
           onClick={() =>
             reference.current.scrollIntoView({
@@ -79,7 +97,7 @@ const Home = ({ noimage, reference }) => {
         <div className="w-full md:w-460 ml-0 flex flex-wrap items-center justify-center gap-4 gap-y-14">
           {products &&
             products
-              .filter((items) => items.category === "پیشنهاد ما")
+              .filter((items) => items.category === config[0].promo)
               .slice(0, 6)
               .map((data, i) => (
                 <motion.div

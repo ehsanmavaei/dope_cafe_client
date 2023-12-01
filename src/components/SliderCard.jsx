@@ -46,7 +46,7 @@ const SliderCard = ({
           >
             <img
               src={data.image ? data.image : noimage}
-              className="w-40 h-40 object-contain"
+              className="w-40 h-40 object-contain rounded-xl"
               alt=""
             />
             <div className=" pt-12">

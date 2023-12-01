@@ -5,6 +5,9 @@ import { Route, Routes } from "react-router-dom";
 import { fadeInOut } from "./animations";
 import { getAllCartItems, validateUserJWTToken } from "./api";
 import { Alert, MainLoader, CheckOutSuccess, UsersOrder } from "./components";
+import { getConfig } from "./api";
+import { setConfig } from "./context/actions/configAction";
+
 
 import { setCartItems } from "./context/actions/cartAction";
 import { setUserDetails } from "./context/actions/userActions";
@@ -20,6 +23,7 @@ const App = () => {
 
   useEffect(() => {
     setIsLoading(true);
+
     setInterval(() => {
       setIsLoading(false);
     }, 2000);

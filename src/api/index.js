@@ -142,10 +142,27 @@ export const getAllProductsList = async () => {
     return null;
   }
 };
+export const getConfig = async () => {
+  try {
+    const res = await axios.get(`${baseURL}/api/config`);
+    return res.data;
+  } catch (err) {
+    return null;
+  }
+};
 // update a productList
 export const updateAProductList = async (product_id,payload) => {
   try {
     const res = await axios.put(`${baseURL}/api/product/list/update/${product_id}`,payload);
+    return res.data;
+  } catch (err) {
+    return null;
+  }
+};
+// update a config
+export const setConfigToServer = async (product_id,payload) => {
+  try {
+    const res = await axios.put(`${baseURL}/api/config/${product_id}`,payload);
     return res.data;
   } catch (err) {
     return null;

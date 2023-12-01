@@ -8,9 +8,11 @@ import { SliderCard } from "../components";
 
 const Slider = ({noimage}) => {
   const products = useSelector((state) => state.products);
+  const config = useSelector((state) => state.config);
   const [fruits, setFruits] = useState(null);
+  // console.log(config[0].openmenu)
   useEffect(() => {
-    setFruits(products?.filter((data) => data.category === "قهوه تک خاستگاه"));
+    setFruits(products?.filter((data) => data.category === config[0].openmenu));
     // console.log(fruits);
   }, [products]);
 

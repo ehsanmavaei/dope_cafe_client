@@ -30,7 +30,6 @@ const DBItems = () => {
   const [activebutton, setActivebutton] = useState(false);
   const [url, setUrl] = useState(null);
   const [invoke, setInvoke] = useState(0);
-  console.log("the progress values is ", progress);
 
   const handleInputChange = (event) => {
     setActivebutton(true);
@@ -61,7 +60,6 @@ const DBItems = () => {
   const fruitsList = Category;
 
   useEffect(() => {
-    console.log("useeffect was called ");
     getAllProducts().then((data) => {
       dispatch(setAllProducts(data));
       setData(data);
@@ -83,12 +81,12 @@ const DBItems = () => {
         setShowModal(false);
         getRidOfTheFile();
         setProgress();
-        dispatch(alertSuccess("مبارکه"));
+        dispatch(alertSuccess("قدم عکس نو رسیده مبارک"));
         setisLoading(false);
 
         setInterval(() => {
           dispatch(alertNULL());
-        }, 8000);
+        }, 3000);
       })
       .catch((error) => {
         dispatch(alertSuccess(error));
@@ -283,8 +281,8 @@ const DBItems = () => {
         title=<MyNewTitle variant="h6" text="لیست محصولات" />
         actions={[
           {
-            icon: "add",
-            tooltip: "Edit Data",
+            icon: "update",
+            tooltip: "تغییر عکس",
             onClick: (event, rowData) => {
               // alert("You want to edit " + rowData._id);
               setShowModal(true);

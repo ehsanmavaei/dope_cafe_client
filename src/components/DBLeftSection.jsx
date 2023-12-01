@@ -68,6 +68,16 @@ const DBLeftSection = () => {
         >
          اضافه کردن 
         </NavLink>
+        <NavLink
+          to={"/dashboard/config"}
+          className={({ isActive }) =>
+            isActive
+              ? `${isActiveStyles} px-4 py-2 border-l-8  border-red-500`
+              : isNotActiveStyles
+          }
+        >
+        تنظیمات
+        </NavLink>
         {/* <NavLink
           to={"/dashboard/users"}
           className={({ isActive }) =>
