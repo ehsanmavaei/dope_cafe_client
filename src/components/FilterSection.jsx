@@ -1,16 +1,19 @@
 import { motion } from "framer-motion";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect } from "react";
 import { IoFastFood } from "../assets/icons";
 import { useSelector } from "react-redux";
 import { staggerFadeInOut } from "../animations";
 import SliderCard from "./SliderCard";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+// import { useDispatch, useSelector } from "react-redux";
 
 
 import "./styles.css";
 
-const FilterSection = ({ noimage, reference, }) => {
+const FilterSection = ({ noimage, reference }) => {
+  const config = useSelector((state) => state.config);
+
 
 
   const scollToRef = useRef();
@@ -23,7 +26,7 @@ const FilterSection = ({ noimage, reference, }) => {
     stopOnInteraction: false,
     rootNode: (emblaRoot) => emblaRoot.parentElement,
   };
-  const [category, setCategory] = useState('کیک');
+  const [category, setCategory] = useState('');
 
 
   const products = useSelector((state) => state.products);

@@ -75,25 +75,25 @@ const DBProducts = () => {
       title: "متن منوی منتخب",
       field: "openmenutext",
     },
-    // {
-    //   title: "منوی پیش فرض",
-    //   field: "chosen",
-    //   editComponent: ({ value, onChange }) => (
-    //     <select onChange={(e) => onChange(e.target.value)}>
-    //       <option selected value={value}>
-    //         {value}
-    //       </option>
-    //       {fruitsList.map(
-    //         (item) =>
-    //           item !== value && (
-    //             <option key={item._id} value={item.category_name}>
-    //               {item.category_name}
-    //             </option>
-    //           )
-    //       )}
-    //     </select>
-    //   ),
-    // },
+    {
+      title: "منوی پیش فرض",
+      field: "chosen",
+      editComponent: ({ value, onChange }) => (
+        <select onChange={(e) => onChange(e.target.value)}>
+          <option selected value={value}>
+            {value}
+          </option>
+          {fruitsList.map(
+            (item) =>
+              item !== value && (
+                <option key={item._id} value={item.category_name}>
+                  {item.category_name}
+                </option>
+              )
+          )}
+        </select>
+      ),
+    },
     {
       title: " ساعت شروع کار",
       field: "start_working",

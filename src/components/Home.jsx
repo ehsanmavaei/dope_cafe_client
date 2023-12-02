@@ -97,7 +97,7 @@ const Home = ({ noimage, reference }) => {
         <div className="w-full md:w-460 ml-0 flex flex-wrap items-center justify-center gap-4 gap-y-14">
           {products &&
             products
-              .filter((items) => items.category === config[0].promo)
+              .filter((items) => items.category === (config && config[0].promo))
               .slice(0, 6)
               .map((data, i) => (
                 <motion.div

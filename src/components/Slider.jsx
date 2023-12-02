@@ -12,7 +12,7 @@ const Slider = ({noimage}) => {
   const [fruits, setFruits] = useState(null);
   // console.log(config[0].openmenu)
   useEffect(() => {
-    setFruits(products?.filter((data) => data.category === config[0].openmenu));
+    setFruits(products?.filter((data) => data.category === (config && config[0].openmenu)));
     // console.log(fruits);
   }, [products]);
 

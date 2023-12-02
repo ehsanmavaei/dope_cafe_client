@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import React, {  } from "react";
-import { useDispatch, } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { buttonClcik, fadeIn } from "../animations";
 // import { addNewItemToCart, getAllCartItems } from "../api";
 import { IoBasket } from "../assets/icons";
@@ -8,6 +8,8 @@ import { alertNULL, alertSuccess } from "../context/actions/alertActions";
 import { setCartItems } from "../context/actions/cartAction";
 // import noimage from "../assets/img/no-image.png";
 import { TbMoodSad } from "react-icons/tb";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import "../assets/css/utilCss.css";
 
@@ -19,19 +21,14 @@ const SliderCard = ({
   number,
   noimage,
 }) => {
-
-
   const dispatch = useDispatch();
 
   const sendToCart = (data) => {
-
     dispatch(alertSuccess("به سبد اضافه شد"));
 
-  
     setInterval(() => {
       dispatch(alertNULL());
     }, 2500);
-
 
     dispatch(setCartItems(data));
   };
@@ -44,7 +41,12 @@ const SliderCard = ({
             {...fadeIn}
             className="bg-lightOverlay  hover:drop-shadow-lg  font-light backdrop-blur-md rounded-xl flex items-center justify-between relative px-4 py-2 w-full md:w-340 md:min-w-350 gap-3"
           >
-            <img
+            <LazyLoadImage
+             effect="blur"
+             wrapperProps={{
+                 // If you need to, you can tweak the effect transition using the wrapper style.
+                 style: {transitionDelay: "1s"},
+             }}
               src={data.image ? data.image : noimage}
               className="w-40 h-40 object-contain rounded-xl"
               alt=""
@@ -78,7 +80,7 @@ const SliderCard = ({
                 reference.current.scrollIntoView({
                   behavior: "smooth",
                   block: "start",
-                inline: "nearest",
+                  inline: "nearest",
                 })
               }
             >

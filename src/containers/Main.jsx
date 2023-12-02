@@ -14,6 +14,7 @@ import { setConfig } from "../context/actions/configAction";
 // const FilterSection = lazy(() => import("../components/FilterSection"));
 
 const Main = () => {
+const [first, setfirst] = useState('')
   const config = useSelector((state) => state.config);
 
 
@@ -56,6 +57,7 @@ const Main = () => {
         <FilterSection
           reference={scollToRef}
           noimage={noimage}
+         
          
         />
       </div>
