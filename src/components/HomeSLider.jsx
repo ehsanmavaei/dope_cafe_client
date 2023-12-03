@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { Slider } from "../components";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const HomeSLider = ({noimage}) => {
   const config = useSelector((state) => state.config);

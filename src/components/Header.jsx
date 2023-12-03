@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Logo } from "../assets";
 import { isActiveStyles, isNotActiveStyles } from "../utils/styles";

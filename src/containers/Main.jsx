@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts, getAllProductsList, getConfig } from "../api";
 import { Cart, Header, Home, HomeSLider } from "../components";
@@ -14,8 +14,7 @@ import { setConfig } from "../context/actions/configAction";
 // const FilterSection = lazy(() => import("../components/FilterSection"));
 
 const Main = () => {
-const [first, setfirst] = useState('')
-  const config = useSelector((state) => state.config);
+
 
 
   const products = useSelector((state) => state.products);

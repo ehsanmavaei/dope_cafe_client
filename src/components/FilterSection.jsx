@@ -12,11 +12,7 @@ import Autoplay from "embla-carousel-autoplay";
 import "./styles.css";
 
 const FilterSection = ({ noimage, reference }) => {
-  const config = useSelector((state) => state.config);
 
-
-
-  const scollToRef = useRef();
 
   const [cartdata, setCartdata] = useState([]);
   const productsList = useSelector((state) => state.productsList);
