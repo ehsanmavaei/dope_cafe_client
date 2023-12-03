@@ -169,7 +169,7 @@ const Login = () => {
                   className="text-red-400 underline cursor-pointer bg-transparent"
                   onClick={() => setIsSignUp(true)}
                 >
-                  {/* Create one */}
+                  Create one
                 </motion.button>
               </p>
             ) : (
