@@ -117,7 +117,6 @@ const DBProducts = () => {
     },
   ];
   const [data, setData] = useState(config);
-  console.log(data);
 
   const MyNewTitle = ({ text, variant }) => (
     <Typography
@@ -182,14 +181,12 @@ const DBProducts = () => {
               onRowUpdate: (newData, oldData) =>
                 new Promise((resolve, reject) => {
                   setTimeout(() => {
-                    console.log("old:", oldData);
-                    console.log("new:", newData);
+                 
                     const dataUpdate = [...data];
                     const index = oldData.tableData.id;
                     dataUpdate[index] = newData;
                     setData([...dataUpdate]);
                     setConfigToServer(oldData._id, newData).then((res) => {
-                      console.log(res);
                       // updateAProductList(oldData._id, newData).then((res) => {
                       //   console.log(res);
                     });

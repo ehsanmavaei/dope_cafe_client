@@ -1,11 +1,19 @@
 import axios from "axios";
+export  const gettoken=()=>{
 
-const tokenInTheStorage=localStorage.getItem('user')
-const parsed= tokenInTheStorage? JSON.parse(tokenInTheStorage).token :" "
+  //setting the global token for all requests
+  const tokenInTheStorage=localStorage.getItem('user')
+  const parsed= tokenInTheStorage? JSON.parse(tokenInTheStorage).token :" "
+  axios.defaults.headers.common['authorization'] = `Bearer ${parsed}`;
+  return parsed
 
-axios.defaults.headers.common['authorization'] = `Bearer ${parsed}`;
+}
+
+
+
 
 export const baseURL = "https://nodes.iran.liara.run";
+axios.defaults.headers.common['authorization'] = `Bearer ${gettoken()}`;
 
 export const validateUserJWTToken = async (token) => {
   try {

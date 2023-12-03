@@ -106,14 +106,12 @@ const DBProducts = () => {
               onRowUpdate: (newData, oldData) =>
                 new Promise((resolve, reject) => {
                   setTimeout(() => {
-                    console.log("old:", oldData);
-                    console.log("new:", newData);
+                   
                     const dataUpdate = [...data];
                     const index = oldData.tableData.id;
                     dataUpdate[index] = newData;
                     setData([...dataUpdate]);
                     updateAProductList(oldData._id, newData).then((res) => {
-                      console.log(res);
                     });
 
                     resolve();

@@ -9,12 +9,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { ToastContainer, toast } from "react-toastify";
 
-
-
-import { login, signup, validateUserJWTToken } from "../api";
+import { gettoken, login, signup } from "../api";
 import { setUserDetails } from "../context/actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
-// import { alertInfo, alertWarning } from "../context/actions/alertActions";
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState("");
@@ -22,20 +19,17 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirm_password] = useState("");
 
-
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.user);
-  const alert = useSelector((state) => state.alert);
+  // const alert = useSelector((state) => state.alert);
 
   useEffect(() => {
     if (user) {
       navigate("/dashboard", { replace: true });
     }
   }, [user]);
-
 
   const signUpWithEmailPass = async () => {
     if (userEmail === "" || password === "" || confirm_password === "") {
@@ -49,10 +43,11 @@ const Login = () => {
 
         signup(userEmail, password)
           .then((response) => {
-            console.log(response);
             //save it to localstorage
 
             localStorage.setItem("user", JSON.stringify(response));
+
+            gettoken();
 
             dispatch(setUserDetails(response));
             navigate("/dashboard", { replace: true });
@@ -60,8 +55,6 @@ const Login = () => {
           .catch((error) => {
             toast.error(error.response.data.error);
           });
-
-   
       } else {
         // dispatch(alertWarning());
         // toast.alert("Password doesn't match")
@@ -76,19 +69,17 @@ const Login = () => {
     if (userEmail !== "" && password !== "") {
       login(userEmail, password)
         .then((response) => {
-          console.log(response);
           //save it to localstorage
 
           localStorage.setItem("user", JSON.stringify(response));
+          gettoken();
 
           dispatch(setUserDetails(response));
         })
         .catch((error) => {
           toast.error(error.response.data.error);
         });
-
-  
-    } 
+    }
   };
 
   return (
@@ -117,9 +108,8 @@ const Login = () => {
         <div className="flex flex-col items-center bg-lightOverlay w-[80%] md:w-508 h-full z-10 backdrop-blur-md p-4 px-4 py-12 gap-6">
           {/* Top logo section */}
           <div className="flex items-center justify-start gap-4 w-full">
-          <p className="text-headingColor font-semibold text-5xl">کافه</p>
+            <p className="text-headingColor font-semibold text-5xl">کافه</p>
             <img src={Logo} className=" w-24" alt="" />
-            
           </div>
 
           {/* welcome text */}
@@ -210,7 +200,7 @@ const Login = () => {
             <p className="text-white">...</p>
             <div className="w-24 h-[1px] rounded-md bg-white"></div>
           </div>
-{/* 
+          {/* 
           <motion.div
             {...buttonClcik}
             className="flex items-center justify-center px-20 py-2 bg-lightOverlay backdrop-blur-md cursor-pointer rounded-3xl gap-4"

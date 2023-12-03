@@ -1,9 +1,9 @@
 import React from "react";
 import MaterialTable from "material-table";
 import { ThemeProvider, createTheme } from "@mui/material";
-import { deleteAProduct, getAllProducts, updateAProduct } from "../api";
+import {  getAllProducts, updateAProduct } from "../api";
 import { setAllProducts } from "../context/actions/productActions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import TablePagination from "material-table";
 
 const DataTable = ({ columns, data, title, actions }) => {
@@ -39,18 +39,14 @@ const DataTable = ({ columns, data, title, actions }) => {
           onRowUpdate: (newData, oldData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
-                console.log("old:", oldData);
-                console.log("new:", newData);
                 const dataUpdate = [...data];
                 const index = oldData.tableData.id;
                 dataUpdate[index] = newData;
                 // setData([...dataUpdate]);
-                console.log(newData._id);
                 getAllProducts().then((data) => {
                   dispatch(setAllProducts([...dataUpdate]));
                 });
                 updateAProduct(newData._id, newData).then((res) => {
-                  console.log(res);
                 });
 
                 resolve();

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { statuses } from "../utils/styles";
+// import { statuses } from "../utils/styles";
 import { uploadIMG } from "../api/index";
 import { Spinner } from "../components";
 import { FaCloudUploadAlt, MdDelete } from "../assets/icons";
@@ -9,11 +9,11 @@ import { setAllProductsList } from "../context/actions/productListActions";
 
 
 import { useDispatch, useSelector } from "react-redux";
-import {
-  alertDanger,
-  alertNULL,
-  alertSuccess,
-} from "../context/actions/alertActions";
+// import {
+//   alertDanger,
+//   alertNULL,
+//   alertSuccess,
+// } from "../context/actions/alertActions";
 import { motion } from "framer-motion";
 import { buttonClcik } from "../animations";
 import { addNewProduct, getAllProducts, deleteIMG } from "../api";
@@ -26,18 +26,15 @@ const DBNewItem = () => {
       setCategoryList(data);
     });
   };
-  const list = useSelector((state) => state.productsList);
-  console.log(list);
+  // const list = useSelector((state) => state.productsList);
+  // console.log(list);
   useEffect(() => {
     fetchdata()
     return () => {};
   }, []);
 
-  let value = "example/data";
-  let encodedValue = encodeURIComponent(value);
-  console.log(encodedValue);
-  let a = decodeURIComponent(encodedValue);
-  console.log(a);
+  
+  
   const [itemName, setItemName] = useState("");
   const [categoryList, setCategoryList] = useState("")
   const [price, setPrice] = useState("");
@@ -79,7 +76,6 @@ const DBNewItem = () => {
         setisLoading(false);
         setImageDownloadURL(null);
         toast.info(res.data.message);
-        console.log(res);
       })
       .catch((error) => {
         console.log(error);
@@ -106,7 +102,6 @@ const DBNewItem = () => {
       toast.warning('لطفا قیمت رو وارد کن')
 
     }else{
-      console.log(data);
       addNewProduct(data).then((res) => {
         // dispatch(alertSuccess("New Item added"));
         // setTimeout(() => {
@@ -120,7 +115,6 @@ const DBNewItem = () => {
       });
       toast.success("در سرور ذخیره شد")
       getAllProducts().then((res) => {
-        console.log(res);
         dispatch(setAllProducts(res));
       });
     }

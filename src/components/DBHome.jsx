@@ -21,7 +21,6 @@ const DBHome = () => {
       labels[i] = productsList[i].category_name;
     }
   } else {
-    console.log("no data");
   }
   //loop trough the products and store the lenght of each category in leng varaiable
   if (products) {
@@ -36,7 +35,6 @@ const DBHome = () => {
       }
     }
   } else {
-    console.log("no data");
   }
 
   //generate an array of color with the the lenght of label variable
@@ -44,7 +42,6 @@ const DBHome = () => {
   for (let m = 0; m < labels.length; m++) {
     colors[m] = "#" + Math.floor(Math.random() * 16777215).toString(16);
   }
-  console.log("colors", colors);
 
   useEffect(() => {
     if (!products) {
