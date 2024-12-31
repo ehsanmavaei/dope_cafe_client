@@ -18,20 +18,7 @@
           "type": "image/png"
       }
   ],
-  "screenshots": [    
-    {
-      "src": "/images/screenshot1.png",
-      "type": "image/png",
-      "sizes": "540x720",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "/images/screenshot2.jpg",
-      "type": "image/jpg",
-      "sizes": "720x540",
-      "form_factor": "wide"
-    }
- ],
+
 
   
   "start_url": ".",
